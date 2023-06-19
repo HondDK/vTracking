@@ -2,6 +2,7 @@ export interface IVehicle {
     id: number;
     name: string;
     category: string;
-    coordinates: {};
     image: string;
+    latitude: string,
+    longitude: string,
 }

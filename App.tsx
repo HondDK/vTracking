@@ -4,19 +4,37 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import VehicleListScreen from './screenPages/VehicleListScreen';
 import MapScreen from './screenPages/MapScreen';
+import VehicleDetailScreen from "./screenPages/VehicleDetailScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const App = () => {
-  return (
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Список" component={VehicleListScreen} />
-          <Tab.Screen name="Карта" component={MapScreen} />
-        </Tab.Navigator>
-      </NavigationContainer>
-  );
+    return (
+        <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Список" component={VehicleListStack} />
+                <Tab.Screen name="Карта" component={MapStack} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
+};
+
+const VehicleListStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="VehicleList" component={VehicleListScreen} />
+            <Stack.Screen name="VehicleDetail" component={VehicleDetailScreen} />
+        </Stack.Navigator>
+    );
+};
+
+const MapStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Map" component={MapScreen} />
+        </Stack.Navigator>
+    );
 };
 
 export default App;

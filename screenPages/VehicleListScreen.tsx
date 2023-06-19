@@ -3,10 +3,14 @@ import { View, FlatList, Button } from 'react-native';
 import VehicleItem from '../components/VehicleItem';
 import useFetchData, { FetchDataResponse } from "../hooks/useFetchData";
 import type { IVehicle } from "../models/IVehicle";
+import { useNavigation } from '@react-navigation/native';
+
 
 const VehicleListScreen = () => {
     const { data }: FetchDataResponse<IVehicle[]> = useFetchData("https://6490611e1e6aa71680cb24ca.mockapi.io/TS");
     const dataArray: IVehicle[] = data || [];
+
+    const navigation = useNavigation();
 
     const [filteredData, setFilteredData] = useState<IVehicle[]>(dataArray);
 
@@ -27,8 +31,8 @@ const VehicleListScreen = () => {
     const categories = Array.from(new Set(dataArray.map((item) => item.category)));
 
     return (
-        <View>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{flex: 1}}>
+            <View style={{flexDirection: 'column', justifyContent: 'space-between'}}>
                 {categories.map((categoryName, index) => (
                     <Button
                         key={index}
@@ -39,10 +43,15 @@ const VehicleListScreen = () => {
                 ))}
 
             </View>
-            <Button title="Применить" onPress={() => handleFilter(category)} />
+            <Button title="Применить" onPress={() => handleFilter(category)}/>
             <FlatList
                 data={filteredData}
-                renderItem={({ item }) => <VehicleItem vehicle={item} />}
+                renderItem={({item}) => (
+                    <VehicleItem
+                        vehicle={item}
+                        onPress={() => navigation.navigate(`VehicleDetail`, {vehicle: item})}
+                    />
+                )}
                 keyExtractor={(item) => item.id.toString()}
             />
         </View>
