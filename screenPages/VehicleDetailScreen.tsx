@@ -30,11 +30,9 @@ const VehicleDetailScreen = ({route}) => {
                 <Marker
                 key={vehicle.id}
                 coordinate={{
-                    latitude: parseFloat(vehicle.latitude),
-                    longitude: parseFloat(vehicle.longitude),
+                    latitude: Number(vehicle.latitude),
+                    longitude: Number(vehicle.longitude),
                 }}
-                title={vehicle.name}
-                description={vehicle.category}
             />
             </MapView>
             <View style={{marginTop: 40}}>
