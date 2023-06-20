@@ -3,6 +3,9 @@ import {Button, Linking, Text, View} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 const VehicleDetailScreen = ({route}) => {
+    // Здесь находится весь код для экрана деталей ТС
+    // Он отображает карту с маркером выбранного ТС и информацию о нем.
+    // Также здесь есть функции для звонка водителю и отправки сообщения.
     const {vehicle} = route.params;
 
     const handleCallDriver = () => {

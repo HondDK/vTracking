@@ -6,6 +6,8 @@ import type { IVehicle } from '../models/IVehicle';
 import {useNavigation} from "@react-navigation/native";
 
 const MapScreen = () => {
+    // Здесь находится весь код для экрана с картой всех доступных ТС
+    // Он отображает карту с маркерами всех ТС и обрабатывает навигацию к экрану VehicleDetailScreen при выборе маркера.
     const navigation = useNavigation();
     const { data }: FetchDataResponse<IVehicle[]> = useFetchData(
         'https://6490611e1e6aa71680cb24ca.mockapi.io/TS'
@@ -66,9 +68,6 @@ const MapScreen = () => {
                         title={vehicle.name}
                         description={vehicle.category}
                         onPress={() => navigation.navigate(`VehicleDetail`, {vehicle: vehicle})}
-                        // Установите свой собственный значок в зависимости от типа ТС
-                        // Вам нужно иметь соответствующие изображения в своем проекте
-                        // и использовать их в качестве значков
                     >
                       <Image source={renderMarkerIcon(vehicle.category)} />
                     </Marker>

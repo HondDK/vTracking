@@ -7,6 +7,7 @@ export interface FetchDataResponse<T> {
 
 }
 
+// Кастомный хук useFetchData для получения данных с сервера
 const useFetchData = <T>(url: string): FetchDataResponse<T> => {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState<boolean>(true);

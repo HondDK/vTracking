@@ -10,6 +10,7 @@ interface VehicleItemProps {
 }
 
 const VehicleItem: React.FC<VehicleItemProps> = ({ vehicle, onPress }) => {
+    //отображение списков с ТС
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={onPress}>

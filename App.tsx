@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import VehicleListScreen from './screenPages/VehicleListScreen';
 import MapScreen from './screenPages/MapScreen';
 import VehicleDetailScreen from "./screenPages/VehicleDetailScreen";
-import {Text} from "react-native";
 import React from "react";
 
 const Stack = createStackNavigator();
