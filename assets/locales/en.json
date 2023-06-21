@@ -1,0 +1,19 @@
+{
+  "Сменить язык": "Switch Language",
+  "ru": "Russian",
+  "en": "English",
+
+  "mainScreen.list": "list",
+  "mainScreen.MapVehicles": "Map with all vehicles",
+  "mainScreen.setting": "setting",
+
+  "listScreen.TS" : "TV",
+  "listScreen.title": "List",
+  "listScreen.applyButton": "Apply",
+  "listScreen.callButton": "To call",
+  "listScreen.messageButton": "To write",
+  "detailScreen.category": "Vehicle category:",
+  "detailScreen.driverName": "Driver's name:",
+  "detailScreen.driverNumber": "Driver's contact number:",
+  "mapScreen.markerImageAlt": "Vehicle Image:"
+}

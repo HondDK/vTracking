@@ -4,12 +4,14 @@ import VehicleItem from '../components/VehicleItem';
 import useFetchData, {FetchDataResponse} from '../hooks/useFetchData';
 import type {IVehicle} from '../models/IVehicle';
 import {useNavigation} from '@react-navigation/native';
-
+import {useTranslation} from "react-i18next";
 
 
 const VehicleListScreen = () => {
     // Здесь находится весь код для экрана списка ТС
     // Он отображает список ТС, фильтрует их по категории и обрабатывает навигацию к экрану VehicleDetailScreen.
+
+    const { t } = useTranslation();
 
     const {data}: FetchDataResponse<IVehicle[]> = useFetchData('https://6490611e1e6aa71680cb24ca.mockapi.io/TS');
     const dataArray: IVehicle[] = data || [];
@@ -44,7 +46,7 @@ const VehicleListScreen = () => {
                 ))}
             </ScrollView>
             <View style={styles.buttonContainer}>
-                <Button title="Применить" onPress={() => handleFilter(category)}/>
+                <Button title={t('listScreen.applyButton')} onPress={() => handleFilter(category)}/>
             </View>
             <View style={styles.container}>
                 <FlatList

@@ -1,0 +1,20 @@
+{
+
+  "Сменить язык": "Сменить язык",
+  "ru": "Русский",
+  "en": "Английский",
+
+  "mainScreen.list": "Список ТС",
+  "mainScreen.MapVehicles": "Карта со всеми ТС",
+  "mainScreen.setting": "Настройки",
+
+  "listScreen.TS" : "ТС",
+  "listScreen.title": "Список",
+  "listScreen.applyButton": "Применить",
+  "listScreen.callButton": "Позвонить",
+  "listScreen.messageButton": "Написать",
+  "detailScreen.category": "Категория ТС:",
+  "detailScreen.driverName": "Имя водителя:",
+  "detailScreen.driverNumber": "Контактный номер водителя:",
+  "mapScreen.markerImageAlt": "Изображение ТС"
+}

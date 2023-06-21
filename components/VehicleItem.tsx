@@ -2,6 +2,7 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import type {IVehicle} from "../models/IVehicle";
+import {useTranslation} from "react-i18next";
 
 
 interface VehicleItemProps {
@@ -11,13 +12,14 @@ interface VehicleItemProps {
 
 const VehicleItem: React.FC<VehicleItemProps> = ({ vehicle, onPress }) => {
     //отображение списков с ТС
+    const { t, i18n } = useTranslation();
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={onPress}>
                 <View style={styles.VehicleItem}>
-                    <Text>{`ТС #${vehicle.id}`}</Text>
-                    <Text>{`Имя водителя: ${vehicle.name}`}</Text>
-                    <Text>{`Категория: ${vehicle.category}`}</Text>
+                    <Text>{` ${t("listScreen.TS")} #${vehicle.id}`}</Text>
+                    <Text>{ `${t("detailScreen.driverName")} ${vehicle.name}`}</Text>
+                    <Text>{` ${t("detailScreen.category")} ${vehicle.category}`}</Text>
                 </View>
             </TouchableOpacity>
         </View>
